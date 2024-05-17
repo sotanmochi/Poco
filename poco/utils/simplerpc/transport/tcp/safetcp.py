@@ -17,11 +17,15 @@ class Client(object):
         self.buf = b""
 
     def connect(self):
+        print("========== Client connect ==========")
+        print("address: ", self.address)
+        print("DEFAULT_TIMEOUT: %d [sec]" % DEFAULT_TIMEOUT)
         # create a new socket every time
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.settimeout(DEFAULT_TIMEOUT)
         self.sock.connect(self.address)
         self._handle_connect()
+        print("========== End of Client connect ==========")
 
     def send(self, msg):
         totalsent = 0
