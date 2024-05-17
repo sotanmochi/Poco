@@ -21,5 +21,5 @@ setup(
 
     author='Netease Games',
     author_email='rockywhisper@163.com, lxhustauto@gmail.com',
-    url='https://github.com/AirtestProject/Poco',
+    url='https://github.com/sotanmochi/Poco (forked from https://github.com/AirtestProject/Poco)',
 )
