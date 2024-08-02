@@ -1,5 +1,6 @@
 # _*_ coding:UTF-8 _*_
 import socket
+import time
 
 DEFAULT_TIMEOUT = 120
 # DEFAULT_TIMEOUT = 5
@@ -29,7 +30,14 @@ class Client(object):
     def send(self, msg):
         totalsent = 0
         while totalsent < len(msg):
+            print(f"[poco][safetcp][send] totalsent: {totalsent}")
+            print(f"[poco][safetcp][send] time.sleep(3)")
+            time.sleep(3)
+            print(f"[poco][safetcp][send] socket.send()")
             sent = self.sock.send(msg[totalsent:])
+            print(f"[poco][safetcp][send] time.sleep(3)")
+            time.sleep(3)
+            print(f"[poco][safetcp][send] sent: {sent}")
             if sent == 0:
                 self._handle_close()
                 raise socket.error("socket connection broken")
